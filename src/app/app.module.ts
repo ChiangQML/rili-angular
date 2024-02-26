@@ -10,7 +10,12 @@ import { PlanEventComponent } from './plan-event/plan-event.component';
 import { SendEventComponent } from './send-event/send-event.component';
 import { ViewEventComponent } from './view-event/view-event.component';
 
-import { RiliProxyService } from './rili-proxy.service';
+
+import { RiliProxyService } from './server/rili-proxy.service';
+
+import { FormsModule } from '@angular/forms';
+
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,10 @@ import { RiliProxyService } from './rili-proxy.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    
   ],
   providers: [RiliProxyService],
   bootstrap: [AppComponent]
