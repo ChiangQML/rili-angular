@@ -1,1 +1,76 @@
-<p>view-event works!</p>
+    <div class="container my-5">
+        <h1>Send an Event:</h1>
+        <form [formGroup]="new_event" (ngSubmit)="onSubmit()" class="row g-3 mt-3 justify-content-center">
+          
+          {{dataModel | json}}
+
+        
+          <div class="col-12">
+            <div class="row-12">
+
+            <div class="d-flex flex-column">
+
+                <div class="row">
+                    <div class="col">
+                        <label for="eventName" class="form-label">Event Name</label>
+                        <input formControlName = "event_name" type="text" class="form-control" placeholder="Board Meeting" [ngModel]="dataModel.event_name">
+                    </div>
+                    <div class="col">
+                        <label for="location" class="form-label">Location</label>
+                        <input formControlName = "location" type="text" class="form-control" placeholder="Norton Building, Suite 201" [ngModel]="dataModel.location">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label for="eventName" class="form-label mt-3">Description</label>
+                        <input formControlName = "descriotion" type="text" class="form-control"  placeholder="Discuss next steps for acquisition between board members and executives" [ngModel]="dataModel.description">
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <div class="col-2 mt-3">
+                        <h4></h4>
+                        <h6>Enter date range</h6>
+                    </div>
+                    <div class="col">
+                        <label for="dateStart" class="form-label mt-3">Start Date:</label>
+                        <input formControlName = "start_date" type="text" class="form-control" placeholder="04/01/2024" [ngModel]="dataModel.start_date">
+                    </div>
+                    <div class="col">
+                        <label for="dateEnd" class="form-label mt-3">End Date:</label>
+                        <input formControlName = "end_date" type="text" class="form-control" placeholder="04/07/2024" [ngModel]="dataModel.end_date">
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-2 mt-3">
+                        <h4></h4>
+                        <h6>Enter time range</h6>
+                    </div>
+                    <div class="col mt-3">
+                        <label for="dateStart" class="form-label">Start Time:</label>
+                        <input formControlName = "start_time" type="text" class="form-control"  placeholder="8:00am" [ngModel]="dataModel.start_time">
+                    </div>
+                    <div class="col">
+                        <label for="dateEnd" class="form-label mt-3">End Time:</label>
+                        <input formControlName = "end_time" type="text" class="form-control" placeholder="3:00pm" [ngModel]="dataModel.end_time">
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-primary mt-3" type="submit">Next: Add Invitees</button>
+                        
+                    </div>
+                </div>
+
+            </div>
+
+            {{new_event.value | json}}
+            
+          </div>
+          </div>
+        </form>
+      </div>
+      
